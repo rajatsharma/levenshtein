@@ -1,14 +1,19 @@
 module Data.Lavenshtein where
 
 import Prelude
-import Data.Maybe (Maybe, fromJust)
+
 import Data.Array (last, init, foldl)
+import Data.Maybe (Maybe, fromJust)
 import Data.String (length)
 import Data.String.CodeUnits (toCharArray, fromCharArray)
 import Partial.Unsafe (unsafePartial)
 
+-- That's right the largest levenshtein distance this can calculate is 32766
+largest :: Int
+largest = 32767
+
 minimum :: Array Int -> Int
-minimum arr = foldl (\x y -> min x y) 99 $ arr
+minimum arr = foldl (\x y -> min x y) largest $ arr
 
 fromJust' :: forall a. Maybe a -> a
 fromJust' = unsafePartial fromJust
