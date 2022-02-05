@@ -1,6 +1,6 @@
-## Purescript-Lavenshtein
+## Lavenshtein
 
-_Lavenshtein Distance in Purescript_
+_Lavenshtein Distance in Haskell_
 
 #### About
 
@@ -14,7 +14,3 @@ import Data.Lavenshtein (levenshtein)
 -- gives 1
 distance = levenshtein "levenshtein" "lavenshtein"
 ```
-
-#### Todo
-
-- Add Tests
